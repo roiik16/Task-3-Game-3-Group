@@ -92,7 +92,6 @@
   <ItemGroup>
     <Compile Include="Assets\Cars\Scripts\TakeScreenshot.cs" />
     <Compile Include="Assets\Cars\Standard Assets\Character Controllers\Sources\Scripts\MouseLook.cs" />
-    <Compile Include="Assets\Fruitpickup.cs" />
     <Compile Include="Assets\Models\GV\Scripts\ScriptLights.cs" />
     <Compile Include="Assets\NatureStarterKit2\Standard Assets\Effects\ImageEffects\Scripts\Antialiasing.cs" />
     <Compile Include="Assets\NatureStarterKit2\Standard Assets\Effects\ImageEffects\Scripts\Bloom.cs" />
@@ -132,7 +131,6 @@
     <Compile Include="Assets\NatureStarterKit2\Standard Assets\Effects\ImageEffects\Scripts\Twirl.cs" />
     <Compile Include="Assets\NatureStarterKit2\Standard Assets\Effects\ImageEffects\Scripts\VignetteAndChromaticAberration.cs" />
     <Compile Include="Assets\NatureStarterKit2\Standard Assets\Effects\ImageEffects\Scripts\Vortex.cs" />
-    <Compile Include="Assets\Scripts\SpawnFuits.cs" />
     <Compile Include="Assets\Scripts\ThrowObjects.cs" />
   </ItemGroup>
   <ItemGroup>
