@@ -13,7 +13,8 @@ public class ThrowObjects : MonoBehaviour
 
     void Start()
     {
-       
+        player = GameObject.FindGameObjectWithTag("Player").transform;
+        playerCam = Camera.main.transform;
     }
 
     void Update()
