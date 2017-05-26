@@ -13,7 +13,6 @@ public class Interact : MonoBehaviour
 
     void Start()
     {
-
         spacetext.SetActive(false);
         conversation.SetActive(false);
     }
@@ -27,6 +26,7 @@ public class Interact : MonoBehaviour
             spacetext1 = true;
 
         }
+
     }
 
     void OnTriggerExit(Collider other)
@@ -36,8 +36,10 @@ public class Interact : MonoBehaviour
             spacetext.SetActive(false);
             spacetext1 = false;
             conversation.SetActive(false);
-
+            Destroy(spacetext);
         }
+
+
     }
 
     void Update()
@@ -46,6 +48,7 @@ public class Interact : MonoBehaviour
         {
             conversation.SetActive(true);
             spacetext.SetActive(false);
+            
         }
     }
 }
