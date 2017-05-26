@@ -11,9 +11,9 @@ public class Interact : MonoBehaviour
 
     bool spacetext1 = false;
 
-
     void Start()
     {
+
         spacetext.SetActive(false);
         conversation.SetActive(false);
     }
@@ -36,7 +36,6 @@ public class Interact : MonoBehaviour
             spacetext.SetActive(false);
             spacetext1 = false;
             conversation.SetActive(false);
-            //Destroy(other.gameObject);
 
         }
     }
