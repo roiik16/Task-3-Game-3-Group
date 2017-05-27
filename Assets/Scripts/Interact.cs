@@ -8,13 +8,15 @@ public class Interact : MonoBehaviour
 {
     public GameObject spacetext;
     public GameObject conversation;
-
+   
     bool spacetext1 = false;
-
+   
     void Start()
     {
         spacetext.SetActive(false);
         conversation.SetActive(false);
+       
+
     }
 
 
@@ -24,8 +26,11 @@ public class Interact : MonoBehaviour
         {
             spacetext.SetActive(true);
             spacetext1 = true;
+           
 
         }
+
+
 
     }
 
@@ -36,10 +41,8 @@ public class Interact : MonoBehaviour
             spacetext.SetActive(false);
             spacetext1 = false;
             conversation.SetActive(false);
-            Destroy(spacetext);
-        }
 
-
+        }      
     }
 
     void Update()
@@ -47,8 +50,15 @@ public class Interact : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.X) && spacetext1)
         {
             conversation.SetActive(true);
-            spacetext.SetActive(false);
-            
+            Destroy(spacetext);
         }
+
+        if (Input.GetKeyDown(KeyCode.Y) && spacetext1)
+        {
+            //conversation.SetActive(true);
+            Destroy(conversation);
+        }
+
+
     }
 }
