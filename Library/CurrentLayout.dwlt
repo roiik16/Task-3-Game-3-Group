@@ -108,9 +108,9 @@ MonoBehaviour:
     width: 1536
     height: 731
   m_MinSize: {x: 683, y: 345}
-  m_MaxSize: {x: 18008, y: 14042}
+  m_MaxSize: {x: 18006, y: 14021}
   vertical: 0
-  controlID: 31624
+  controlID: 8858
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -134,7 +134,7 @@ MonoBehaviour:
   m_MinSize: {x: 202, y: 345}
   m_MaxSize: {x: 4002, y: 8045}
   vertical: 1
-  controlID: 31625
+  controlID: 8794
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -232,10 +232,10 @@ MonoBehaviour:
     y: 0
     width: 341
     height: 731
-  m_MinSize: {x: 277, y: 342}
-  m_MaxSize: {x: 10002, y: 14042}
+  m_MinSize: {x: 277, y: 321}
+  m_MaxSize: {x: 10000, y: 14021}
   vertical: 1
-  controlID: 31656
+  controlID: 8859
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -390,14 +390,14 @@ MonoBehaviour:
     width: 936
     height: 307
   m_SceneLighting: 1
-  lastFramingTime: 12833.155482883652
+  lastFramingTime: 1859.7311602747739
   m_2DMode: 0
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 93.200806, y: 11.82, z: 153.12659}
+    m_Target: {x: 167.47598, y: 10.966995, z: 190.79782}
     speed: 2
-    m_Value: {x: 93.200806, y: 11.82, z: 153.12659}
+    m_Value: {x: 167.47598, y: 10.966995, z: 190.79782}
   m_RenderMode: 0
   m_ValidateTrueMetals: 0
   m_SceneViewState:
@@ -420,13 +420,13 @@ MonoBehaviour:
       speed: 2
       m_Value: 0
   m_Rotation:
-    m_Target: {x: -0.024552952, y: 0.9610228, z: -0.26009515, w: -0.09080152}
+    m_Target: {x: 0.0544944, y: -0.636122, z: 0.045127332, w: 0.76838714}
     speed: 2
-    m_Value: {x: -0.024552187, y: 0.960993, z: -0.2600871, w: -0.09079872}
+    m_Value: {x: -0.054494403, y: 0.63612205, z: -0.045127332, w: -0.7683872}
   m_Size:
-    m_Target: 589.1413
+    m_Target: 4.605316
     speed: 2
-    m_Value: 589.1413
+    m_Value: 4.605316
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -517,9 +517,9 @@ MonoBehaviour:
     height: 710
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: d0fcfbff
-    m_LastClickedID: -262960
-    m_ExpandedIDs: 4269feff4a69feff9e69feffa669feffe069feffe869feff1a8dfeff228dfeffe4fbffff00000000f62e00003a2f0000682f0000702f0000a02f0000e62f0000f82f0000
+    m_SelectedIDs: c2300000
+    m_LastClickedID: 12482
+    m_ExpandedIDs: 9eb5ffffe2c7ffffe2fbffff00000000d22f0000dc2f000082300000a23000005c310000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -638,19 +638,19 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 0
     m_Folders:
-    - Assets/Icons
+    - Assets/Scripts
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Icons
+  - Assets/Scripts
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\Dell\Documents\Task-3-Game-3-Group
   m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 123}
-    m_SelectedIDs: 1c560000
-    m_LastClickedID: 22044
-    m_ExpandedIDs: 00000000d02600003027000010290000162900004a2900004a2a0000aa2b0000622d0000ba2d0000c02d00003e2e000000ca9a3bffffff7f
+    scrollPos: {x: 0, y: 155}
+    m_SelectedIDs: 16280000
+    m_LastClickedID: 10262
+    m_ExpandedIDs: 00000000f4260000562700003a2900004029000074290000742a0000d42b00008c2d0000e62d0000ec2d00006a2e000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -678,7 +678,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000d02600003027000010290000162900004a2900004a2a0000aa2b0000622d0000ba2d0000c02d00003e2e000000ca9a3bffffff7f
+    m_ExpandedIDs: 00000000f4260000562700003a2900004029000074290000742a0000d42b00008c2d0000e62d0000ec2d00006a2e000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
