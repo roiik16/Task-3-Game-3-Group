@@ -5,14 +5,14 @@ using UnityEngine;
 public class TomatoCollector : MonoBehaviour {
 
     int tomatototal = 0;
-
+    public Rigidbody rb;
 
     private void OnTriggerEnter(Collider c)
     {
         if (c.tag == "Tomato")
         {
             tomatototal++;
-
+            rb.isKinematic = false;
             Debug.Log(tomatototal);
         }
     }
@@ -31,7 +31,8 @@ public class TomatoCollector : MonoBehaviour {
     // Use this for initialization
     void Start ()
     {
-	}
+        rb = GetComponent<Rigidbody>();
+    }
 	
 	// Update is called once per frame
 	void Update ()
