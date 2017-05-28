@@ -10,7 +10,8 @@ public class Teleport : MonoBehaviour {
     public GameObject GetOnnTruck;
     public GameObject obj;
 
-    public Transform destination;
+    public Transform findjob;
+    public Transform Cropmissionteleport;
     public Transform GetOnTruck;
 
     bool spacetext1 = false;
@@ -22,7 +23,7 @@ public class Teleport : MonoBehaviour {
         Exit.SetActive(false);
         GetOnnTruck.SetActive(false);
         obj.SetActive(false);
-        //GetOnnTruck.SetActive(false);
+        GetOnnTruck.SetActive(false);
     }
 
     private void OnTriggerEnter(Collider other)
@@ -47,17 +48,18 @@ public class Teleport : MonoBehaviour {
     {
         if (Input.GetKeyDown(KeyCode.X) && spacetext1)
         {
-            transform.position = destination.position;
+            transform.position = findjob.position;
             //Destroy(Exit);
             spacetext1 = false;
         }
 
         if (Input.GetKeyDown(KeyCode.X) && spacetext2)
         {
-            transform.position = GetOnTruck.position;
+            transform.position = Cropmissionteleport.position;
             //Destroy(Exit);
             spacetext2 = false;
-            
+            GetOnnTruck.SetActive(false);
+
         }
 
         if (Input.GetKeyDown(KeyCode.Y))
