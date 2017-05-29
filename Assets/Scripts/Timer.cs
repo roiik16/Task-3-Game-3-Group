@@ -6,25 +6,37 @@ using UnityEngine.SceneManagement;
 
 public class Timer : MonoBehaviour {
 
-    public int timeLeft = 240;
+    public int timeLeft = 120;
     public Text countdownText;
+    public bool timerIsActive = false;
+    public Transform Finish1;
+    bool spacetext3 = false;
+
 
     // Use this for initialization
-    void Start () {
-        StartCoroutine("LoseTime");
-    }
-	
-	// Update is called once per frame
-	void Update () {
-        //CountDown
-        countdownText.text = ("Time Left: " + timeLeft);
-
-        if (timeLeft <= 0)
+    public void StartTimer() {
+        if (!timerIsActive)
         {
-            StopCoroutine("LoseTime");
-            countdownText.text = "Times Up!";
-            SceneManager.LoadScene("GameOver");
+            timerIsActive = true;
+            StartCoroutine("LoseTime");
+            Debug.Log("okokok");
+        }
+    }
 
+    public void StopTimer()
+    {
+        StopCoroutine("LostTime");
+    }
+
+    private void OnTriggerEnter()
+    {
+
+        if (other.tag == "Level1")
+        {
+            //Level1.SetActive(true);
+            spacetext3 = true;
+            //transform.position = GetOnTruck.position;
+            transform.position = Finish1.position;
         }
     }
 
@@ -34,6 +46,18 @@ public class Timer : MonoBehaviour {
         {
             yield return new WaitForSeconds(1);
             timeLeft--;
+
+            countdownText.text = ("Time Left: " + timeLeft);
+
+            if (timeLeft <= 0)
+            {
+                StopTimer();
+                countdownText.text = "Go to the truck!";
+                timerIsActive = false;
+                spacetext3 = true;
+                //transform.position = GetOnTruck.position;
+                transform.position = Finish1.position;
+            }
         }
     }
 }

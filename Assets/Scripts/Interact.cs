@@ -10,7 +10,7 @@ public class Interact : MonoBehaviour
     public GameObject conversation;
    
     bool spacetext1 = false;
-   
+    
     void Start()
     {
         spacetext.SetActive(false);

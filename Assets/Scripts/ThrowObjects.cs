@@ -57,9 +57,10 @@ public class ThrowObjects : MonoBehaviour
                 beingCarried = false;
             }
         }
+
     }
    
-    void OnTriggerEnter()
+    void OnTriggerEnter(Collider other)
     {
         if (beingCarried)
         {

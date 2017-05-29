@@ -9,13 +9,16 @@ public class Teleport : MonoBehaviour {
     public GameObject Exit;
     public GameObject GetOnnTruck;
     public GameObject obj;
+    //public GameObject Level1;
 
     public Transform findjob;
     public Transform Cropmissionteleport;
     public Transform GetOnTruck;
+    public Transform Finish1;
 
     bool spacetext1 = false;
     bool spacetext2 = false;
+    bool spacetext3 = false;
 
 
     void Start()
@@ -42,6 +45,8 @@ public class Teleport : MonoBehaviour {
             //transform.position = GetOnTruck.position;
         }
 
+
+
     }
 
     void Update()
@@ -59,8 +64,8 @@ public class Teleport : MonoBehaviour {
             //Destroy(Exit);
             spacetext2 = false;
             GetOnnTruck.SetActive(false);
-
         }
+
 
         if (Input.GetKeyDown(KeyCode.Y))
         {
