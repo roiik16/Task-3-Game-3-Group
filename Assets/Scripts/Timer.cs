@@ -5,13 +5,21 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class Timer : MonoBehaviour {
-
+    public GameObject Time;
+    public GameObject bushes;
     public int timeLeft = 120;
     public Text countdownText;
     public bool timerIsActive = false;
     public Transform Finish1;
     bool spacetext3 = false;
+    public GameObject EndLevel1;
 
+    void Start()
+    {
+        bushes.SetActive(true);
+        Time.SetActive(false);
+        EndLevel1.SetActive(false);
+    }
 
     // Use this for initialization
     public void StartTimer() {
@@ -20,6 +28,8 @@ public class Timer : MonoBehaviour {
             timerIsActive = true;
             StartCoroutine("LoseTime");
             Debug.Log("okokok");
+            Time.SetActive(true);
+            
         }
     }
 
@@ -28,7 +38,7 @@ public class Timer : MonoBehaviour {
         StopCoroutine("LostTime");
     }
 
-    private void OnTriggerEnter()
+    private void OnTriggerEnter(Collider other)
     {
 
         if (other.tag == "Level1")
@@ -37,6 +47,7 @@ public class Timer : MonoBehaviour {
             spacetext3 = true;
             //transform.position = GetOnTruck.position;
             transform.position = Finish1.position;
+
         }
     }
 
@@ -51,12 +62,14 @@ public class Timer : MonoBehaviour {
 
             if (timeLeft <= 0)
             {
+                bushes.SetActive(false);
+                EndLevel1.SetActive(true);
                 StopTimer();
                 countdownText.text = "Go to the truck!";
                 timerIsActive = false;
                 spacetext3 = true;
                 //transform.position = GetOnTruck.position;
-                transform.position = Finish1.position;
+               
             }
         }
     }
