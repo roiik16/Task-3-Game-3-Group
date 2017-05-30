@@ -44,9 +44,12 @@ public class Timer : MonoBehaviour {
         if (other.tag == "Level1")
         {
             //Level1.SetActive(true);
-            spacetext3 = true;
+			spacetext3 = false;
             //transform.position = GetOnTruck.position;
             transform.position = Finish1.position;
+			countdownText.text = "";
+			Time.SetActive (false);
+
 
         }
     }
