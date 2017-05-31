@@ -151,8 +151,8 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Bench\ReadMe.txt" />
-    <None Include="Assets\GeoPainter\readme.txt" />
-    <None Include="Assets\Jeremy\Docs\MaleCharacterAnimation.txt" />
+    <None Include="Assets\Downloaded assets\GeoPainter\readme.txt" />
+    <None Include="Assets\Downloaded assets\Jeremy\Docs\MaleCharacterAnimation.txt" />
     <None Include="Assets\NatureStarterKit2\Standard Assets\Effects\GlassRefraction\Shaders\GlassStainedBumpDistort.shader" />
     <None Include="Assets\NatureStarterKit2\Standard Assets\Effects\ImageEffects\Shaders\BlendModesOverlay.shader" />
     <None Include="Assets\NatureStarterKit2\Standard Assets\Effects\ImageEffects\Shaders\BlurEffectConeTaps.shader" />
