@@ -16,6 +16,7 @@ public class Teleport : MonoBehaviour {
     public Transform Cropmissionteleport;
     public Transform GetOnTruck;
     public Transform Finish1;
+    public Transform HouseWorkTele;
 
     bool spacetext1 = false;
     bool spacetext2 = false;
@@ -44,6 +45,13 @@ public class Teleport : MonoBehaviour {
             GetOnnTruck.SetActive(true);
             spacetext2 = true;
             //transform.position = GetOnTruck.position;
+        }
+
+        //TO WORK TEMPORARY
+        if (other.tag == "HouseTele")
+        {
+            transform.position = HouseWorkTele.position;
+            Debug.Log("hello");
         }
 
 

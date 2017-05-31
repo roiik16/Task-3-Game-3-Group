@@ -15,7 +15,6 @@ public class Interact : MonoBehaviour
     {
         spacetext.SetActive(false);
         conversation.SetActive(false);
-       
 
     }
 

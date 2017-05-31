@@ -195,6 +195,7 @@
     <Compile Include="Assets\Downloaded assets\Standard Assets\Utility\TimedObjectDestructor.cs" />
     <Compile Include="Assets\Downloaded assets\Standard Assets\Utility\WaypointCircuit.cs" />
     <Compile Include="Assets\Downloaded assets\Standard Assets\Utility\WaypointProgressTracker.cs" />
+    <Compile Include="Assets\Housemission.cs" />
     <Compile Include="Assets\Scripts\Interact.cs" />
     <Compile Include="Assets\Scripts\Teleport.cs" />
     <Compile Include="Assets\Scripts\ThrowObjects.cs" />
