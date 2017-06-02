@@ -9,6 +9,7 @@ public class Teleport : MonoBehaviour {
     public GameObject Exit;
     public GameObject GetOnnTruck;
     public GameObject obj;
+    public GameObject obj1;
     //public GameObject Level1;
 
 
@@ -28,6 +29,7 @@ public class Teleport : MonoBehaviour {
         Exit.SetActive(false);
         GetOnnTruck.SetActive(false);
         obj.SetActive(false);
+        obj1.SetActive(false);
         GetOnnTruck.SetActive(false);
     }
 
@@ -37,6 +39,9 @@ public class Teleport : MonoBehaviour {
         {
             Exit.SetActive(true);
             spacetext1 = true;
+            Destroy(obj);
+           
+
             //transform.position = destination.position;
         }
 
@@ -79,6 +84,8 @@ public class Teleport : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.Y))
         {
             obj.SetActive(false);
+            obj.SetActive(false);
+            //Destroy(obj1);
         }
 
         if (Input.GetKeyDown(KeyCode.Q))
@@ -95,6 +102,7 @@ public class Teleport : MonoBehaviour {
         {
             Exit.SetActive(false);
             spacetext1 = false;
+            obj1.SetActive(true);
         }
 
         if (other.tag == "GetOnTruck")

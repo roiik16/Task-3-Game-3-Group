@@ -40,6 +40,7 @@ public class Interact : MonoBehaviour
             spacetext.SetActive(false);
             spacetext1 = false;
             conversation.SetActive(false);
+       
 
         }      
     }
@@ -54,8 +55,8 @@ public class Interact : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Y) && spacetext1)
         {
-            //conversation.SetActive(true);
-            Destroy(conversation);
+            conversation.SetActive(true);
+          Destroy(conversation);
         }
 
 
