@@ -14,12 +14,14 @@ public class Timer : MonoBehaviour {
     bool spacetext3 = false;
     public GameObject EndLevel1;
     public GameObject obj3;
+    public GameObject obj4;
 
     void Start()
     {
         bushes.SetActive(true);
         Time.SetActive(false);
         obj3.SetActive(false);
+        obj4.SetActive(false);
         EndLevel1.SetActive(false);
     }
 
@@ -51,7 +53,8 @@ public class Timer : MonoBehaviour {
             transform.position = Finish1.position;
 			countdownText.text = "";
 			Time.SetActive (false);
-            obj3.SetActive(true);
+            obj3.SetActive(false);
+            obj4.SetActive(true);
 
 
 

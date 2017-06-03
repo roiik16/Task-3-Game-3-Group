@@ -11,6 +11,7 @@ public class Teleport : MonoBehaviour {
     public GameObject obj;
     public GameObject obj1;
     public GameObject obj2;
+    public GameObject obj4;
     public GameObject Level1;
 
 
@@ -32,6 +33,7 @@ public class Teleport : MonoBehaviour {
         obj.SetActive(true);
         obj1.SetActive(false);
         obj2.SetActive(false);
+        obj4.SetActive(false);
         GetOnnTruck.SetActive(false);
     }
 
