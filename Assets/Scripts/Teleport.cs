@@ -10,7 +10,8 @@ public class Teleport : MonoBehaviour {
     public GameObject GetOnnTruck;
     public GameObject obj;
     public GameObject obj1;
-    //public GameObject Level1;
+    public GameObject obj2;
+    public GameObject Level1;
 
 
     public Transform findjob;
@@ -28,8 +29,9 @@ public class Teleport : MonoBehaviour {
     {
         Exit.SetActive(false);
         GetOnnTruck.SetActive(false);
-        obj.SetActive(false);
+        obj.SetActive(true);
         obj1.SetActive(false);
+        obj2.SetActive(false);
         GetOnnTruck.SetActive(false);
     }
 
@@ -39,10 +41,6 @@ public class Teleport : MonoBehaviour {
         {
             Exit.SetActive(true);
             spacetext1 = true;
-            Destroy(obj);
-           
-
-            //transform.position = destination.position;
         }
 
         if (other.tag == "GetOnTruck")
@@ -68,30 +66,24 @@ public class Teleport : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.X) && spacetext1)
         {
             transform.position = findjob.position;
-            //Destroy(Exit);
+            Destroy(obj);
             spacetext1 = false;
+            obj1.SetActive(true);
         }
+
+        //LUDWIG HERE - Mhux vera :O
+       
 
         if (Input.GetKeyDown(KeyCode.X) && spacetext2)
         {
             transform.position = Cropmissionteleport.position;
-            //Destroy(Exit);
             spacetext2 = false;
             GetOnnTruck.SetActive(false);
-        }
+            Destroy(obj1);
+            obj2.SetActive(true);
 
-
-        if (Input.GetKeyDown(KeyCode.Y))
-        {
-            obj.SetActive(false);
-            obj.SetActive(false);
-            //Destroy(obj1);
         }
-
-        if (Input.GetKeyDown(KeyCode.Q))
-        {
-            obj.SetActive(true);
-        }
+        
 
 
     }
@@ -102,7 +94,7 @@ public class Teleport : MonoBehaviour {
         {
             Exit.SetActive(false);
             spacetext1 = false;
-            obj1.SetActive(true);
+            
         }
 
         if (other.tag == "GetOnTruck")
@@ -110,8 +102,6 @@ public class Teleport : MonoBehaviour {
             Exit.SetActive(false);
             spacetext2 = false;
         }
-
-
 
     }
 }
