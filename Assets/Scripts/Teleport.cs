@@ -61,6 +61,15 @@ public class Teleport : MonoBehaviour {
             Debug.Log("hello");
         }
 
+        if (other.tag == "gtcInjured")
+        {
+            Debug.Log("go home");
+            if (Input.GetKeyDown(KeyCode.X)) { 
+            transform.position = Finish1.position;
+            Debug.Log("go home you're injured");
+            }
+        }
+
 
 
     }

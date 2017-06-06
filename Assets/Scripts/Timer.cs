@@ -61,9 +61,10 @@ public class Timer : MonoBehaviour {
                 obj3.SetActive(false);
                 obj4.SetActive(true);
             }
-
-
-
+        }
+        if (other.tag == "GetInjured")
+        {
+            other.transform.GetComponent<Rigidbody>().isKinematic = false;
         }
     }
 
