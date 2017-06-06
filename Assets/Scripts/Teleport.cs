@@ -8,18 +8,20 @@ public class Teleport : MonoBehaviour {
 
     public GameObject Exit;
     public GameObject GetOnnTruck;
+
+    public GameObject Level1;
+
     public GameObject obj;
     public GameObject obj1;
     public GameObject obj2;
     public GameObject obj4;
-    public GameObject Level1;
-
-
+    
     public Transform findjob;
     public Transform Cropmissionteleport;
     public Transform GetOnTruck;
     public Transform Finish1;
     public Transform HouseWorkTele;
+    public Transform ConstructWork;
 
     bool spacetext1 = false;
     bool spacetext2 = false;
