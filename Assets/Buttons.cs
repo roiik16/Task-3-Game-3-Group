@@ -16,7 +16,6 @@ public class Buttons : MonoBehaviour
     public void Button(string Play)
     {
         introcanvas.SetActive(false);
-
     }
 
 }
