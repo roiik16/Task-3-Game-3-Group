@@ -9,6 +9,10 @@ public class Teleport : MonoBehaviour {
     public GameObject Exit;
     public GameObject GetOnnTruck;
 
+    public GameObject CropVan;
+    public GameObject InjuryVan;
+    public GameObject HouseVan;
+
     public GameObject Level1;
 
     public GameObject obj;
@@ -37,6 +41,9 @@ public class Teleport : MonoBehaviour {
         obj2.SetActive(false);
         obj4.SetActive(false);
         GetOnnTruck.SetActive(false);
+        CropVan.SetActive(false);
+        HouseVan.SetActive(false);
+        InjuryVan.SetActive(false);
     }
 
     private void OnTriggerEnter(Collider other)
@@ -45,6 +52,7 @@ public class Teleport : MonoBehaviour {
         {
             Exit.SetActive(true);
             spacetext1 = true;
+            CropVan.SetActive(true);
         }
 
         if (other.tag == "GetOnTruck")
@@ -80,6 +88,7 @@ public class Teleport : MonoBehaviour {
         {
             transform.position = findjob.position;
             Destroy(obj);
+            
             spacetext1 = false;
             obj1.SetActive(true);
         }
@@ -92,6 +101,7 @@ public class Teleport : MonoBehaviour {
             transform.position = Cropmissionteleport.position;
             spacetext2 = false;
             GetOnnTruck.SetActive(false);
+            Destroy(CropVan);
             Destroy(obj1);
             obj2.SetActive(true);
 

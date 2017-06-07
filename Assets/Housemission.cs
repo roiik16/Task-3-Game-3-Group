@@ -5,13 +5,25 @@ using UnityEngine;
 public class Housemission : MonoBehaviour {
 
     public GameObject GetoutText;
+    public GameObject HouseVan;
+    public GameObject InjuryVan;
     public Transform backtobunker;
+
+
+    void Start()
+    {
+        
+        //CropVan.SetActive(false);
+        HouseVan.SetActive(false);
+        InjuryVan.SetActive(false);
+    }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Getout")
         {
             GetoutText.SetActive(true);
+            GetoutText.SetActive(false);
         }
     }
 
@@ -19,6 +31,8 @@ public class Housemission : MonoBehaviour {
     {
         if (other.tag == "Getout")
         {
+
+            Destroy(HouseVan);
             GetoutText.SetActive(false);
             transform.position = backtobunker.position;
         }
