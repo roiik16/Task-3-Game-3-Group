@@ -9,6 +9,8 @@ public class getvehicles : MonoBehaviour {
 
     public Transform spawnlocations;
 
+    public int spawntimer = 2;
+
     void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Worktele")
@@ -19,26 +21,26 @@ public class getvehicles : MonoBehaviour {
 
     IEnumerator Vehiclespawn()
     {
-        yield return new WaitForSeconds(30);
-        Instantiate(vehicleprefabs[Random.Range(0,3)], spawnlocations.position, spawnlocations.rotation);
+        yield return new WaitForSeconds(spawntimer);
+        Instantiate(vehicleprefabs[Random.Range(0,2)], spawnlocations.position, spawnlocations.rotation);
 
-        yield return new WaitForSeconds(30);
-        Instantiate(vehicleprefabs[Random.Range(0, 3)], spawnlocations.position, spawnlocations.rotation);
+        yield return new WaitForSeconds(spawntimer);
+        Instantiate(vehicleprefabs[Random.Range(0, 2)], spawnlocations.position, spawnlocations.rotation);
 
-        yield return new WaitForSeconds(30);
-        Instantiate(vehicleprefabs[Random.Range(0, 3)], spawnlocations.position, spawnlocations.rotation);
+        yield return new WaitForSeconds(spawntimer);
+        Instantiate(vehicleprefabs[Random.Range(0, 2)], spawnlocations.position, spawnlocations.rotation);
 
-        yield return new WaitForSeconds(30);
-        Instantiate(vehicleprefabs[Random.Range(0, 3)], spawnlocations.position, spawnlocations.rotation);
+        yield return new WaitForSeconds(spawntimer);
+        Instantiate(vehicleprefabs[Random.Range(0, 2)], spawnlocations.position, spawnlocations.rotation);
 
-        yield return new WaitForSeconds(30);
-        Instantiate(vehicleprefabs[Random.Range(0, 3)], spawnlocations.position, spawnlocations.rotation);
+        yield return new WaitForSeconds(spawntimer);
+        Instantiate(vehicleprefabs[Random.Range(0, 2)], spawnlocations.position, spawnlocations.rotation);
 
-        yield return new WaitForSeconds(30);
-        Instantiate(vehicleprefabs[Random.Range(0, 3)], spawnlocations.position, spawnlocations.rotation);
+        yield return new WaitForSeconds(spawntimer);
+        Instantiate(vehicleprefabs[Random.Range(0, 2)], spawnlocations.position, spawnlocations.rotation);
 
-        yield return new WaitForSeconds(30);
-        Instantiate(vehicleprefabs[Random.Range(0, 3)], spawnlocations.position, spawnlocations.rotation);
+        yield return new WaitForSeconds(spawntimer);
+        Instantiate(vehicleprefabs[Random.Range(0, 2)], spawnlocations.position, spawnlocations.rotation);
 
     }
 
