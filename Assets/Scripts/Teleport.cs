@@ -26,10 +26,14 @@ public class Teleport : MonoBehaviour {
     public Transform Finish1;
     public Transform HouseWorkTele;
     public Transform ConstructWork;
+    public Transform HouseWork;
+    public Transform InjuryWork;
 
     bool spacetext1 = false;
     bool spacetext2 = false;
     bool spacetext3 = false;
+    bool spacetext4 = false;
+    bool spacetext5 = false;
 
 
     void Start()
@@ -78,6 +82,20 @@ public class Teleport : MonoBehaviour {
             }
         }
 
+        if (other.tag == "GoHouse")
+        {
+            Debug.Log("go home");
+            GetOnnTruck.SetActive(true);
+            spacetext4 = true;
+        }
+
+        if (other.tag == "GoInjured")
+        {
+            Debug.Log("go home");
+            GetOnnTruck.SetActive(true);
+            spacetext5 = true;
+        }
+
 
 
     }
@@ -104,9 +122,27 @@ public class Teleport : MonoBehaviour {
             Destroy(CropVan);
             Destroy(obj1);
             obj2.SetActive(true);
-
         }
-        
+
+        if (Input.GetKeyDown(KeyCode.X) && spacetext4)
+        {
+            transform.position = HouseWork.position;
+            spacetext4 = false;
+            GetOnnTruck.SetActive(false);
+            //Destroy(CropVan);
+            //Destroy(obj1);
+            //obj2.SetActive(true);
+        }
+
+        if (Input.GetKeyDown(KeyCode.X) && spacetext5)
+        {
+            transform.position = InjuryWork.position;
+            spacetext4 = false;
+            GetOnnTruck.SetActive(false);
+            //Destroy(CropVan);
+            //Destroy(obj1);
+            //obj2.SetActive(true);
+        }
 
 
     }

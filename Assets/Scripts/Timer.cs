@@ -16,6 +16,10 @@ public class Timer : MonoBehaviour {
     public GameObject obj3;
     public GameObject obj4;
 
+    public GameObject CropVan;
+    public GameObject InjuryVan;
+    public GameObject HouseVan;
+
     void Start()
     {
         bushes.SetActive(true);
@@ -23,6 +27,10 @@ public class Timer : MonoBehaviour {
         obj3.SetActive(false);
         obj4.SetActive(false);
         EndLevel1.SetActive(false);
+
+        CropVan.SetActive(false);
+        HouseVan.SetActive(false);
+        InjuryVan.SetActive(false);
     }
 
     // Use this for initialization
@@ -60,6 +68,7 @@ public class Timer : MonoBehaviour {
                 transform.position = Finish1.position;
                 obj3.SetActive(false);
                 obj4.SetActive(true);
+                HouseVan.SetActive(true);
             }
         }
         if (other.tag == "GetInjured")
@@ -85,6 +94,7 @@ public class Timer : MonoBehaviour {
                 countdownText.text = "Go to the truck!";
                 timerIsActive = false;
                 spacetext3 = true;
+
                 //transform.position = GetOnTruck.position;
                
             }

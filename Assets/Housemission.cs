@@ -23,7 +23,6 @@ public class Housemission : MonoBehaviour {
         if (other.tag == "Getout")
         {
             GetoutText.SetActive(true);
-            GetoutText.SetActive(false);
         }
     }
 
@@ -35,6 +34,7 @@ public class Housemission : MonoBehaviour {
             Destroy(HouseVan);
             GetoutText.SetActive(false);
             transform.position = backtobunker.position;
+            InjuryVan.SetActive(true);
         }
     }
 }
