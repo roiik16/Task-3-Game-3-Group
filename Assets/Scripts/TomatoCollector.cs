@@ -9,7 +9,14 @@ public class TomatoCollector : MonoBehaviour {
 
     int tomatototal = 0;
     public Rigidbody rb;
-    //  public int timeLeft = 120;
+
+    public Text printmoney;
+
+
+    int tomatomoney = 0;
+
+
+    //public int timeLeft = 120;
     //public Text countdownText;
     //public GameObject Timer;
 
@@ -18,17 +25,9 @@ public class TomatoCollector : MonoBehaviour {
         if (c.tag == "Tomato")
         {
             tomatototal++;
-            rb.isKinematic = false;
+            GetComponent<Rigidbody>().isKinematic = true;
             Debug.Log(tomatototal);
             GameObject.FindObjectOfType<Timer>().StartTimer ();
-            
-            
-            //Start the timer
-            //StartCoroutine("LoseTime");
-            //Timer.SetActive(true);
-            //CountDown
-
-
         }
     }
 
@@ -38,23 +37,36 @@ public class TomatoCollector : MonoBehaviour {
         if (c.tag == "Tomato")
         {
             tomatototal--;
-
-            Debug.Log(tomatototal);
         }
     }
 
     // Use this for initialization
     void Start ()
     {
-        //Timer.SetActive(true);
         rb = GetComponent<Rigidbody>();
     }
 	
 	// Update is called once per frame
 	void Update ()
     {
-        
+   
     }
 
-    
+
+    public void moneytoprint()
+    {
+
+
+        if (tomatototal <= 10)
+        {
+            tomatomoney = Random.Range(5, 20);
+        }
+
+        if (tomatototal >= 11)
+        {
+            tomatomoney = Random.Range(20, 40);
+        }
+
+        printmoney.text = tomatomoney.ToString();
+    }
 }

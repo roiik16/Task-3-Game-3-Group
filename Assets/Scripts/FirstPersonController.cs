@@ -259,12 +259,18 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
         public void Exhausted()
         {
-            m_WalkSpeed = 2f;
+            m_WalkSpeed = 3f;
         }
 
         public void NormalSpeed()
         {
             m_WalkSpeed = 5f;
         }
+
+
+
+      
+
+      
     }
 }

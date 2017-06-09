@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityStandardAssets.Characters.FirstPerson;
+
 
 public class ThrowObjects : MonoBehaviour
 {
@@ -22,7 +24,7 @@ public class ThrowObjects : MonoBehaviour
     void Update()
     {
         float dist = Vector3.Distance(gameObject.transform.position, player.position);
-        if (dist <= 2.5f)
+        if (dist <= 1.5f)
         {
             hasPlayer = true;
         }
@@ -35,6 +37,8 @@ public class ThrowObjects : MonoBehaviour
             GetComponent<Rigidbody>().isKinematic = true;
             transform.parent = playerCam;
             beingCarried = true;
+
+            GameObject.FindObjectOfType<FirstPersonController>().Exhausted();
         }
         if (beingCarried)
         {
@@ -44,6 +48,8 @@ public class ThrowObjects : MonoBehaviour
                 transform.parent = null;
                 beingCarried = false;
                 touched = false;
+
+                GameObject.FindObjectOfType<FirstPersonController>().NormalSpeed();
             }
             if (Input.GetMouseButtonDown(0))
             {
@@ -51,6 +57,7 @@ public class ThrowObjects : MonoBehaviour
                 transform.parent = null;
                 beingCarried = false;
                 GetComponent<Rigidbody>().AddForce(playerCam.forward * throwForce);
+                GameObject.FindObjectOfType<FirstPersonController>().NormalSpeed();
             }
             else if (Input.GetMouseButtonDown(1))
             {
@@ -66,6 +73,7 @@ public class ThrowObjects : MonoBehaviour
         if (beingCarried)
         {
             touched = true;
+          
         }
     }
 }

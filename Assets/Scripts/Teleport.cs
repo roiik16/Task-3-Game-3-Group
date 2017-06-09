@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityStandardAssets.Characters.FirstPerson;
+
 
 public class Teleport : MonoBehaviour {
 
@@ -65,8 +67,8 @@ public class Teleport : MonoBehaviour {
             spacetext2 = true;
             //transform.position = GetOnTruck.position;
         }
-
-        //TO WORK TEMPORARY
+        
+        //TO change after..
         if (other.tag == "HouseTele")
         {
             transform.position = HouseWorkTele.position;
@@ -153,7 +155,7 @@ public class Teleport : MonoBehaviour {
         {
             Exit.SetActive(false);
             spacetext1 = false;
-            
+            GameObject.FindObjectOfType<FirstPersonController>().NormalSpeed();
         }
 
         if (other.tag == "GetOnTruck")

@@ -12,7 +12,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
     {
         public GameObject Time;
         public GameObject bushes;
-        public int timeLeft = 240;
+        public int timeLeft = 120;
         public Text countdownText;
         public bool timerIsActive = false;
         public Transform Finish1;
@@ -37,8 +37,6 @@ namespace UnityStandardAssets.Characters.FirstPerson
             CropVan.SetActive(false);
             HouseVan.SetActive(false);
             InjuryVan.SetActive(false);
-
-
         }
 
         // Use this for initialization
@@ -103,7 +101,6 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
                 if (timeLeft <= 0)
                 {
-                    bushes.SetActive(false);
                     EndLevel1.SetActive(true);
                     StopTimer();
                     countdownText.text = "Go to the truck!";

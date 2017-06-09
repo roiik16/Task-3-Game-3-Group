@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+using UnityStandardAssets.Characters.FirstPerson;
+
 public class Buttons : MonoBehaviour
 {
 
@@ -15,7 +17,6 @@ public class Buttons : MonoBehaviour
     {
       
     }
-
 
     public void Update()
     {
@@ -79,6 +80,7 @@ public class Buttons : MonoBehaviour
 
         Introimages[10].SetActive(false);
         obj.SetActive(true);
+        GameObject.FindObjectOfType<FirstPersonController>().enabled = true;
 
     }
 
