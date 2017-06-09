@@ -40,7 +40,7 @@ public class Teleport : MonoBehaviour {
     {
         Exit.SetActive(false);
         GetOnnTruck.SetActive(false);
-        obj.SetActive(true);
+        obj.SetActive(false);
         obj1.SetActive(false);
         obj2.SetActive(false);
         obj4.SetActive(false);

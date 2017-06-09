@@ -9,6 +9,7 @@ public class Buttons : MonoBehaviour
     public GameObject introcanvas;
 
     public GameObject [] Introimages;
+    public GameObject obj;
 
     public void Button(string Play)
     {
@@ -27,6 +28,7 @@ public class Buttons : MonoBehaviour
     private void Start()
     {
         introcanvas.SetActive(true);
+        obj.SetActive(false);
     }
 
     IEnumerator Imagesanim()
@@ -76,6 +78,8 @@ public class Buttons : MonoBehaviour
         Introimages[9].SetActive(false);
 
         Introimages[10].SetActive(false);
+        obj.SetActive(true);
+
     }
 
 }
