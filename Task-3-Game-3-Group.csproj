@@ -189,6 +189,7 @@
     <Compile Include="Assets\Downloaded assets\Standard Assets\Utility\WaypointCircuit.cs" />
     <Compile Include="Assets\Downloaded assets\Standard Assets\Utility\WaypointProgressTracker.cs" />
     <Compile Include="Assets\Scripts\Buttons.cs" />
+    <Compile Include="Assets\Scripts\DisbaleFruit.cs" />
     <Compile Include="Assets\Scripts\EndofDayController.cs" />
     <Compile Include="Assets\Scripts\FirstPersonController.cs" />
     <Compile Include="Assets\Scripts\Housemission.cs" />
