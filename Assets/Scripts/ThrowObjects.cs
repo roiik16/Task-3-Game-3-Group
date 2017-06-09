@@ -11,6 +11,8 @@ public class ThrowObjects : MonoBehaviour
     public int dmg;
     private bool touched = false;
 
+
+
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
@@ -57,7 +59,6 @@ public class ThrowObjects : MonoBehaviour
                 beingCarried = false;
             }
         }
-
     }
    
     void OnTriggerEnter(Collider other)

@@ -76,9 +76,14 @@
     <Reference Include="UnityEditor">
       <HintPath>Library\UnityAssemblies\UnityEditor.dll</HintPath>
     </Reference>
+    <Reference Include="UnityEditor.iOS.Extensions.Xcode">
+      <HintPath>Library\UnityAssemblies\UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.iOS.Extensions.Common">
+      <HintPath>Library\UnityAssemblies\UnityEditor.iOS.Extensions.Common.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Buttons.cs" />
     <Compile Include="Assets\Downloaded assets\AllStarCharacterLibray\Scripts\CamTarget.cs" />
     <Compile Include="Assets\Downloaded assets\AllStarCharacterLibray\Scripts\CharacterDemoController.cs" />
     <Compile Include="Assets\Downloaded assets\AllStarCharacterLibray\Scripts\MouseOrbit.cs" />
@@ -126,7 +131,6 @@
     <Compile Include="Assets\Downloaded assets\NatureStarterKit2\Standard Assets\Effects\ImageEffects\Scripts\Twirl.cs" />
     <Compile Include="Assets\Downloaded assets\NatureStarterKit2\Standard Assets\Effects\ImageEffects\Scripts\VignetteAndChromaticAberration.cs" />
     <Compile Include="Assets\Downloaded assets\NatureStarterKit2\Standard Assets\Effects\ImageEffects\Scripts\Vortex.cs" />
-    <Compile Include="Assets\Downloaded assets\Standard Assets\Characters\FirstPersonCharacter\Scripts\FirstPersonController.cs" />
     <Compile Include="Assets\Downloaded assets\Standard Assets\Characters\FirstPersonCharacter\Scripts\HeadBob.cs" />
     <Compile Include="Assets\Downloaded assets\Standard Assets\Characters\FirstPersonCharacter\Scripts\MouseLook.cs" />
     <Compile Include="Assets\Downloaded assets\Standard Assets\Characters\FirstPersonCharacter\Scripts\RigidbodyFirstPersonController.cs" />
@@ -190,13 +194,16 @@
     <Compile Include="Assets\Downloaded assets\Standard Assets\Utility\TimedObjectDestructor.cs" />
     <Compile Include="Assets\Downloaded assets\Standard Assets\Utility\WaypointCircuit.cs" />
     <Compile Include="Assets\Downloaded assets\Standard Assets\Utility\WaypointProgressTracker.cs" />
-    <Compile Include="Assets\Housemission.cs" />
+    <Compile Include="Assets\Scripts\Buttons.cs" />
+    <Compile Include="Assets\Scripts\EndofDayController.cs" />
+    <Compile Include="Assets\Scripts\FirstPersonController.cs" />
+    <Compile Include="Assets\Scripts\Housemission.cs" />
     <Compile Include="Assets\Scripts\Interact.cs" />
     <Compile Include="Assets\Scripts\Teleport.cs" />
     <Compile Include="Assets\Scripts\ThrowObjects.cs" />
     <Compile Include="Assets\Scripts\Timer.cs" />
     <Compile Include="Assets\Scripts\TomatoCollector.cs" />
-    <Compile Include="Assets\getvehicles.cs" />
+    <Compile Include="Assets\Scripts\getvehicles.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Downloaded assets\Bench\ReadMe.txt" />

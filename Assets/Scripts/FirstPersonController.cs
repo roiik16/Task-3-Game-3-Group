@@ -1,8 +1,10 @@
 using System;
+using System.Collections;
 using UnityEngine;
 using UnityStandardAssets.CrossPlatformInput;
 using UnityStandardAssets.Utility;
 using Random = UnityEngine.Random;
+using UnityStandardAssets.Characters.FirstPerson;
 
 namespace UnityStandardAssets.Characters.FirstPerson
 {
@@ -252,6 +254,17 @@ namespace UnityStandardAssets.Characters.FirstPerson
                 return;
             }
             body.AddForceAtPosition(m_CharacterController.velocity*0.1f, hit.point, ForceMode.Impulse);
+        }
+
+
+        public void Exhausted()
+        {
+            m_WalkSpeed = 2f;
+        }
+
+        public void NormalSpeed()
+        {
+            m_WalkSpeed = 5f;
         }
     }
 }

@@ -3,100 +3,117 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityStandardAssets.Characters.FirstPerson;
 
-public class Timer : MonoBehaviour {
-    public GameObject Time;
-    public GameObject bushes;
-    public int timeLeft = 120;
-    public Text countdownText;
-    public bool timerIsActive = false;
-    public Transform Finish1;
-    bool spacetext3 = false;
-    public GameObject EndLevel1;
-    public GameObject obj3;
-    public GameObject obj4;
 
-    public GameObject CropVan;
-    public GameObject InjuryVan;
-    public GameObject HouseVan;
-
-    void Start()
+namespace UnityStandardAssets.Characters.FirstPerson
+{
+    public class Timer : MonoBehaviour
     {
-        bushes.SetActive(true);
-        Time.SetActive(false);
-        obj3.SetActive(false);
-        obj4.SetActive(false);
-        EndLevel1.SetActive(false);
+        public GameObject Time;
+        public GameObject bushes;
+        public int timeLeft = 240;
+        public Text countdownText;
+        public bool timerIsActive = false;
+        public Transform Finish1;
+        bool spacetext3 = false;
+        public GameObject EndLevel1;
+        public GameObject obj3;
+        public GameObject obj4;
+        public GameObject ExhaustedText;
 
-        CropVan.SetActive(false);
-        HouseVan.SetActive(false);
-        InjuryVan.SetActive(false);
-    }
+        public GameObject CropVan;
+        public GameObject InjuryVan;
+        public GameObject HouseVan;
 
-    // Use this for initialization
-    public void StartTimer() {
-        if (!timerIsActive)
+        void Start()
         {
-            timerIsActive = true;
-            StartCoroutine("LoseTime");
-            Debug.Log("okokok");
-            Time.SetActive(true);
-            
+            bushes.SetActive(true);
+            Time.SetActive(false);
+            obj3.SetActive(false);
+            obj4.SetActive(false);
+            EndLevel1.SetActive(false);
+
+            CropVan.SetActive(false);
+            HouseVan.SetActive(false);
+            InjuryVan.SetActive(false);
+
+
         }
-    }
 
-    public void StopTimer()
-    {
-        StopCoroutine("LostTime");
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-
-        if (other.tag == "Level1")
+        // Use this for initialization
+        public void StartTimer()
         {
-            //Level1.SetActive(true);
-			spacetext3 = false;
-            //transform.position = GetOnTruck.position;
-            
-			countdownText.text = "";
-			Time.SetActive (false);
-            
-
-            if (other.tag == "Level1" && timeLeft <= 0 )
+            if (!timerIsActive)
             {
-                transform.position = Finish1.position;
-                obj3.SetActive(false);
-                obj4.SetActive(true);
-                HouseVan.SetActive(true);
+                timerIsActive = true;
+                StartCoroutine("LoseTime");
+                Time.SetActive(true);
             }
         }
-        if (other.tag == "GetInjured")
+
+        public void StopTimer()
         {
-            other.transform.GetComponent<Rigidbody>().isKinematic = false;
+            StopCoroutine("LostTime");
         }
-    }
 
-    IEnumerator LoseTime()
-    {
-        while (true)
+        private void OnTriggerEnter(Collider other)
         {
-            yield return new WaitForSeconds(1);
-            timeLeft--;
-
-            countdownText.text = ("Time Left: " + timeLeft);
-
-            if (timeLeft <= 0)
+            if (other.tag == "Level1")
             {
-                bushes.SetActive(false);
-                EndLevel1.SetActive(true);
-                StopTimer();
-                countdownText.text = "Go to the truck!";
-                timerIsActive = false;
-                spacetext3 = true;
-
+                //Level1.SetActive(true);
+                spacetext3 = false;
                 //transform.position = GetOnTruck.position;
-               
+
+                countdownText.text = "";
+                Time.SetActive(false);
+
+
+                if (other.tag == "Level1" && timeLeft <= 0)
+                {
+                    transform.position = Finish1.position;
+                    obj3.SetActive(false);
+                    obj4.SetActive(true);
+                    HouseVan.SetActive(true);
+                }
+            }
+            if (other.tag == "GetInjured")
+            {
+                other.transform.GetComponent<Rigidbody>().isKinematic = false;
+            }
+        }
+
+        IEnumerator LoseTime()
+        {
+            while (true)
+            {
+
+                int randomnum = Random.Range(90, 150);
+
+                yield return new WaitForSeconds(1);
+                timeLeft--;
+
+                countdownText.text = ("Time Left: " + timeLeft);
+
+                if (timeLeft == randomnum)
+                {
+                    GameObject.FindObjectOfType<FirstPersonController>().Exhausted();
+                    ExhaustedText.SetActive(true);
+                }
+
+                if (timeLeft <= 0)
+                {
+                    bushes.SetActive(false);
+                    EndLevel1.SetActive(true);
+                    StopTimer();
+                    countdownText.text = "Go to the truck!";
+                    timerIsActive = false;
+                    spacetext3 = true;
+
+                    ExhaustedText.SetActive(false);
+
+                    //transform.position = GetOnTruck.position;
+                }
             }
         }
     }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityStandardAssets.Characters.FirstPerson;
 
 public class TomatoCollector : MonoBehaviour {
 
@@ -16,7 +17,6 @@ public class TomatoCollector : MonoBehaviour {
     {
         if (c.tag == "Tomato")
         {
-            print("hi");
             tomatototal++;
             rb.isKinematic = false;
             Debug.Log(tomatototal);
