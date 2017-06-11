@@ -8,6 +8,8 @@ using UnityStandardAssets.Characters.FirstPerson;
 public class Buttons : MonoBehaviour
 {
 
+    public AudioSource audioclip;
+
     public GameObject introcanvas;
     public GameObject introimage1;
     public GameObject introimage2;
@@ -19,7 +21,7 @@ public class Buttons : MonoBehaviour
     public GameObject introimage8;
     public GameObject introimage9;
     public GameObject introimage10;
-    //ol
+
     public GameObject [] Introimages;
     public GameObject obj;
 
@@ -38,6 +40,12 @@ public class Buttons : MonoBehaviour
     }
     private void Start()
     {
+
+        audioclip = GetComponent<AudioSource>();
+
+        audioclip.Play();
+
+        GameObject.FindObjectOfType<FirstPersonController>().enabled = false;
         introcanvas.SetActive(true);
         obj.SetActive(false);
         introimage1.SetActive(false);
@@ -123,6 +131,7 @@ public class Buttons : MonoBehaviour
         obj.SetActive(true);
         GameObject.FindObjectOfType<FirstPersonController>().enabled = true;
 
+        audioclip.Stop();
     }
 
 }

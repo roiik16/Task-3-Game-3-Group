@@ -7,6 +7,9 @@ public class Housemission : MonoBehaviour {
     public GameObject GetoutText;
     public GameObject HouseVan;
     public GameObject InjuryVan;
+
+    public GameObject housetele;
+     
     public Transform backtobunker;
 
 
@@ -35,6 +38,10 @@ public class Housemission : MonoBehaviour {
             GetoutText.SetActive(false);
             transform.position = backtobunker.position;
             InjuryVan.SetActive(true);
+
+
+            housetele.SetActive(true);
+
         }
     }
 }

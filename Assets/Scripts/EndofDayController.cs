@@ -5,12 +5,16 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using UnityStandardAssets.Characters.FirstPerson;
 
+
+
 public class EndofDayController : MonoBehaviour
 {
 
     public int timeLeft = 10;
 
     public GameObject Endofday;
+
+
     //public GameObject moneytext;
     int CropWork = 0;
     int familymoney = 0;
@@ -26,10 +30,13 @@ public class EndofDayController : MonoBehaviour
     public Text Total;
 
 
+    public GameObject endofdayenabler;
+
     // Use this for initialization
     void Start()
     {
         Endofday.SetActive(false);
+        endofdayenabler.SetActive(false);
     }
 
     // Update is called once per frame
@@ -41,8 +48,9 @@ public class EndofDayController : MonoBehaviour
             family.text = "";
             daily.text = "";
             Crop.text = "";
-            total.text = "";
-            print("del");
+            Total.text = ""; 
+            GameObject.FindObjectOfType<FirstPersonController>().enabled = true;
+            endofdayenabler.SetActive(false);
         }
     }
 
@@ -52,6 +60,7 @@ public class EndofDayController : MonoBehaviour
 
         if (other.tag == "aftercrop")
         {
+            Endofday.SetActive(true);
             dailymoney = Random.Range(5, 10);
             familymoney = Random.Range(5, 10);
             CropWork = Random.Range(10, 20);
@@ -64,9 +73,14 @@ public class EndofDayController : MonoBehaviour
             Total.text = "" + total.ToString();
 
             //moneytext.SetActive(true);
-            Endofday.SetActive(true);
+
+            Debug.Log("testing");
             //GameObject.FindObjectOfType<TomatoCollector>().moneytoprint();
 
+
+
+
+            GameObject.FindObjectOfType<FirstPersonController>().enabled = false;
         }
 
     }

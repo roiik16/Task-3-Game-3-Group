@@ -26,6 +26,8 @@ namespace UnityStandardAssets.Characters.FirstPerson
         public GameObject InjuryVan;
         public GameObject HouseVan;
 
+
+        public GameObject croptele;
         void Start()
         {
             bushes.SetActive(true);
@@ -91,7 +93,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
                 yield return new WaitForSeconds(1);
                 timeLeft--;
 
-                countdownText.text = ("Time Left: " + timeLeft);
+                countdownText.text = ("Work time left: " + timeLeft);
 
                 if (timeLeft == randomnum)
                 {
@@ -103,13 +105,18 @@ namespace UnityStandardAssets.Characters.FirstPerson
                 {
                     EndLevel1.SetActive(true);
                     StopTimer();
-                    countdownText.text = "Go to the truck!";
+                    countdownText.text = "We are done for today, lets go";
                     timerIsActive = false;
                     spacetext3 = true;
 
                     ExhaustedText.SetActive(false);
 
                     //transform.position = GetOnTruck.position;
+
+                    
+                    croptele.SetActive(true);
+
+                    StopCoroutine("LoseTime");
                 }
             }
         }
