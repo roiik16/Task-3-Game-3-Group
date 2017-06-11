@@ -12,6 +12,9 @@ public class Housemission : MonoBehaviour {
      
     public Transform backtobunker;
 
+    public GameObject obj5;
+    public GameObject obj6;
+
 
     void Start()
     {
@@ -19,6 +22,8 @@ public class Housemission : MonoBehaviour {
         //CropVan.SetActive(false);
         HouseVan.SetActive(false);
         InjuryVan.SetActive(false);
+        obj5.SetActive(false);
+        obj6.SetActive(false);
     }
 
     private void OnTriggerEnter(Collider other)
@@ -38,7 +43,8 @@ public class Housemission : MonoBehaviour {
             GetoutText.SetActive(false);
             transform.position = backtobunker.position;
             InjuryVan.SetActive(true);
-
+            obj5.SetActive(false);
+            obj6.SetActive(true);
 
             housetele.SetActive(true);
 

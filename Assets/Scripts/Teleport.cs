@@ -15,13 +15,18 @@ public class Teleport : MonoBehaviour {
     public GameObject InjuryVan;
     public GameObject HouseVan;
 
+    public GameObject End;
+
     public GameObject Level1;
 
     public GameObject obj;
     public GameObject obj1;
     public GameObject obj2;
     public GameObject obj4;
-    
+    public GameObject obj5;
+    public GameObject obj6;
+    public GameObject obj7;
+
     public Transform findjob;
     public Transform Cropmissionteleport;
     public Transform GetOnTruck;
@@ -42,14 +47,18 @@ public class Teleport : MonoBehaviour {
     {
         Exit.SetActive(false);
         GetOnnTruck.SetActive(false);
-        obj.SetActive(false);
+        obj.SetActive(true);
         obj1.SetActive(false);
         obj2.SetActive(false);
         obj4.SetActive(false);
+        obj5.SetActive(false);
+        obj6.SetActive(false);
+        obj7.SetActive(false);
         GetOnnTruck.SetActive(false);
         CropVan.SetActive(false);
         HouseVan.SetActive(false);
         InjuryVan.SetActive(false);
+        End.SetActive(false);
     }
 
     private void OnTriggerEnter(Collider other)
@@ -73,14 +82,16 @@ public class Teleport : MonoBehaviour {
         {
             transform.position = HouseWorkTele.position;
             Debug.Log("hello");
+            
         }
 
         if (other.tag == "gtcInjured")
         {
-            Debug.Log("go home");
+            Debug.Log("dahal u ma komplpix");
             if (Input.GetKeyDown(KeyCode.X)) { 
-            transform.position = Finish1.position;
+            //transform.position = Finish1.position;
             Debug.Log("go home you're injured");
+            End.SetActive(true);
             }
         }
 
@@ -89,13 +100,16 @@ public class Teleport : MonoBehaviour {
             Debug.Log("go home");
             GetOnnTruck.SetActive(true);
             spacetext4 = true;
+            
         }
 
         if (other.tag == "GoInjured")
         {
-            Debug.Log("go home");
+            Debug.Log("dahal hazin");
             GetOnnTruck.SetActive(true);
             spacetext5 = true;
+            obj1.SetActive(false);
+            obj7.SetActive(true);
         }
 
 
@@ -108,7 +122,8 @@ public class Teleport : MonoBehaviour {
         {
             transform.position = findjob.position;
             Destroy(obj);
-            
+            obj4.SetActive(false);
+            obj6.SetActive(false);
             spacetext1 = false;
             obj1.SetActive(true);
         }
@@ -122,7 +137,7 @@ public class Teleport : MonoBehaviour {
             spacetext2 = false;
             GetOnnTruck.SetActive(false);
             Destroy(CropVan);
-            Destroy(obj1);
+            obj1.SetActive(false);
             obj2.SetActive(true);
         }
 
@@ -134,6 +149,8 @@ public class Teleport : MonoBehaviour {
             //Destroy(CropVan);
             //Destroy(obj1);
             //obj2.SetActive(true);
+            obj1.SetActive(false);
+            obj5.SetActive(true);
         }
 
         if (Input.GetKeyDown(KeyCode.X) && spacetext5)
@@ -144,6 +161,7 @@ public class Teleport : MonoBehaviour {
             //Destroy(CropVan);
             //Destroy(obj1);
             //obj2.SetActive(true);
+
         }
 
 

@@ -6,10 +6,14 @@ using UnityEngine.SceneManagement;
 
 public class Interact : MonoBehaviour
 {
-   
+
+    public GameObject onequote;
+    public GameObject twoquote;
+    public GameObject threequote;
+
     public GameObject conversation;
     bool spacetext1 = false;
-
+    public GameObject End;
     public GameObject conversation2;
     bool spacetext2 = false;
 
@@ -45,6 +49,10 @@ public class Interact : MonoBehaviour
         GetHelp.SetActive(false);
 
         ConstructTruck.SetActive(false);
+        End.SetActive(false);
+        onequote.SetActive(false);
+        twoquote.SetActive(false);
+        threequote.SetActive(false);
 
     }
 
@@ -96,13 +104,33 @@ public class Interact : MonoBehaviour
 
         if (other.tag == "gtcInjured")
         {
-                transform.position = Finish1.position;
+                //transform.position = Finish1.position;
             Debug.Log("go home you're injured");
-           
+            End.SetActive(true);
+
+            StartCoroutine("Ending");
         }
 
 
     }
+
+
+    IEnumerator Ending()
+    {
+        yield return new WaitForSeconds(1);
+
+        onequote.SetActive(true);
+        yield return new WaitForSeconds(4);
+
+        twoquote.SetActive(true);
+        yield return new WaitForSeconds(4);
+
+        threequote.SetActive(true);
+        yield return new WaitForSeconds(4);
+
+        Application.Quit();
+
+    } 
 
     void OnTriggerExit(Collider other)
     {
