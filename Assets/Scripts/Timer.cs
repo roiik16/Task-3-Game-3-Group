@@ -25,15 +25,18 @@ namespace UnityStandardAssets.Characters.FirstPerson
         public GameObject CropVan;
         public GameObject InjuryVan;
         public GameObject HouseVan;
+        public GameObject GetHelp;
 
 
         public GameObject croptele;
         void Start()
         {
+
             bushes.SetActive(true);
             Time.SetActive(false);
             obj3.SetActive(false);
             obj4.SetActive(false);
+            GetHelp.SetActive(false);
             EndLevel1.SetActive(false);
 
             CropVan.SetActive(false);
@@ -79,8 +82,17 @@ namespace UnityStandardAssets.Characters.FirstPerson
             }
             if (other.tag == "GetInjured")
             {
+                StartCoroutine("Injured");
+
+
                 other.transform.GetComponent<Rigidbody>().isKinematic = false;
+                
             }
+        }
+        IEnumerator Injured() {
+            yield return new WaitForSeconds(1);
+            GetHelp.SetActive(true);
+            InjuryVan.SetActive(true);
         }
 
         IEnumerator LoseTime()

@@ -26,8 +26,7 @@ public class Interact : MonoBehaviour
     public GameObject conversation5;
     bool spacetext5 = false;
 
-    public GameObject GetHelp;
-    bool spacetext6 = false;
+  
 
     public GameObject ConstructTruck;
     bool spacetext7 = false;
@@ -46,7 +45,7 @@ public class Interact : MonoBehaviour
 
         conversation5.SetActive(false);
 
-        GetHelp.SetActive(false);
+
 
         ConstructTruck.SetActive(false);
         End.SetActive(false);
@@ -94,13 +93,7 @@ public class Interact : MonoBehaviour
             Debug.Log("Go Interact5");
         }
 
-        if (other.tag == "GetHelp")
-        {
-            GetHelp.SetActive(true);
-            ConstructTruck.SetActive(true);
-            spacetext6 = true;
-            Debug.Log("Go Interact6");
-        }
+       
 
         if (other.tag == "gtcInjured")
         {
@@ -122,9 +115,11 @@ public class Interact : MonoBehaviour
         onequote.SetActive(true);
         yield return new WaitForSeconds(4);
 
+        onequote.SetActive(false);
         twoquote.SetActive(true);
         yield return new WaitForSeconds(4);
 
+        twoquote.SetActive(false);
         threequote.SetActive(true);
         yield return new WaitForSeconds(4);
 
@@ -165,12 +160,7 @@ public class Interact : MonoBehaviour
             spacetext5 = false;
         }
 
-        if (other.tag == "GetHelp")
-        {
-            GetHelp.SetActive(false);
-            spacetext6 = false;
-            Debug.Log("Go Interact6");
-        }
+        
 
     }
    

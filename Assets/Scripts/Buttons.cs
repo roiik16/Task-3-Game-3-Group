@@ -131,6 +131,7 @@ public class Buttons : MonoBehaviour
         obj.SetActive(true);
         GameObject.FindObjectOfType<FirstPersonController>().enabled = true;
 
+        yield return new WaitForSeconds(2);
         audioclip.Stop();
     }
 

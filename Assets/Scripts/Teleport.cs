@@ -47,7 +47,7 @@ public class Teleport : MonoBehaviour {
     {
         Exit.SetActive(false);
         GetOnnTruck.SetActive(false);
-        obj.SetActive(true);
+        obj.SetActive(false);
         obj1.SetActive(false);
         obj2.SetActive(false);
         obj4.SetActive(false);
@@ -180,7 +180,28 @@ public class Teleport : MonoBehaviour {
         {
             Exit.SetActive(false);
             spacetext2 = false;
+
+            GetOnnTruck.SetActive(false);
+
         }
+
+        if (other.tag == "GoHouse")
+        {
+            Debug.Log("go home");
+            GetOnnTruck.SetActive(false);
+            spacetext4 = false;
+
+        }
+
+        if (other.tag == "GoInjured")
+        {
+            Debug.Log("dahal hazin");
+            GetOnnTruck.SetActive(false);
+            spacetext5 = (false);
+            obj1.SetActive(false);
+            obj7.SetActive(true);
+        }
+
 
     }
 }
