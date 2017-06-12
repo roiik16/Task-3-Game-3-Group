@@ -10,7 +10,6 @@ public class Interact : MonoBehaviour
 
     public GameObject onequote;
     public GameObject twoquote;
-    public GameObject threequote;
 
     public GameObject conversation;
     bool spacetext1 = false;
@@ -48,6 +47,8 @@ public class Interact : MonoBehaviour
         conversation4.SetActive(false);
         conversation5.SetActive(false);
         ConstructTruck.SetActive(false);
+        dudetext1.SetActive(false);
+
     }
 
     void OnTriggerEnter(Collider other)
@@ -118,9 +119,6 @@ public class Interact : MonoBehaviour
         twoquote.SetActive(true);
         yield return new WaitForSeconds(4);
 
-        twoquote.SetActive(false);
-        threequote.SetActive(true);
-        yield return new WaitForSeconds(4);
 
         Application.Quit();
 
