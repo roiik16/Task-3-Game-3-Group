@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityStandardAssets.Characters.FirstPerson;
 
 public class Interact : MonoBehaviour
 {
@@ -33,28 +34,21 @@ public class Interact : MonoBehaviour
 
     public Transform Finish1;
 
+    public GameObject betweenanim4ending;
+
+
+
+    public GameObject dudetext1;
+
     void Start()
     {
         conversation.SetActive(false);
-
         conversation2.SetActive(false);
-
         conversation3.SetActive(false);
-
         conversation4.SetActive(false);
-
         conversation5.SetActive(false);
-
-
-
         ConstructTruck.SetActive(false);
-        End.SetActive(false);
-        onequote.SetActive(false);
-        twoquote.SetActive(false);
-        threequote.SetActive(false);
-
     }
-
 
     void OnTriggerEnter(Collider other)
     {
@@ -97,13 +91,17 @@ public class Interact : MonoBehaviour
 
         if (other.tag == "gtcInjured")
         {
-                //transform.position = Finish1.position;
-            Debug.Log("go home you're injured");
             End.SetActive(true);
+            GameObject.FindObjectOfType<FirstPersonController>().enabled = false;
 
             StartCoroutine("Ending");
         }
 
+
+        if (other.tag == "outsidedude1")
+        {
+            dudetext1.SetActive(true);
+        }
 
     }
 
@@ -111,6 +109,7 @@ public class Interact : MonoBehaviour
     IEnumerator Ending()
     {
         yield return new WaitForSeconds(1);
+        betweenanim4ending.SetActive(true);
 
         onequote.SetActive(true);
         yield return new WaitForSeconds(4);
@@ -160,7 +159,11 @@ public class Interact : MonoBehaviour
             spacetext5 = false;
         }
 
-        
+
+        if (other.tag == "outsidedude1")
+        {
+            dudetext1.SetActive(false);
+        }
 
     }
    

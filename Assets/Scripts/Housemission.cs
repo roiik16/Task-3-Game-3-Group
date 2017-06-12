@@ -15,10 +15,11 @@ public class Housemission : MonoBehaviour {
     public GameObject obj5;
     public GameObject obj6;
 
+    public GameObject enableendofgame;
+
 
     void Start()
     {
-        
         //CropVan.SetActive(false);
         HouseVan.SetActive(false);
         InjuryVan.SetActive(false);
@@ -48,6 +49,9 @@ public class Housemission : MonoBehaviour {
 
             housetele.SetActive(true);
 
+
+
+            enableendofgame.SetActive(true);
         }
     }
 }

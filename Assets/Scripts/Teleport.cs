@@ -190,7 +190,6 @@ public class Teleport : MonoBehaviour {
             Debug.Log("go home");
             GetOnnTruck.SetActive(false);
             spacetext4 = false;
-
         }
 
         if (other.tag == "GoInjured")

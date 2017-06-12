@@ -31,12 +31,15 @@ public class EndofDayController : MonoBehaviour
 
 
     public GameObject endofdayenabler;
+    public GameObject disableafterhouse;
 
     // Use this for initialization
     void Start()
     {
         Endofday.SetActive(false);
         endofdayenabler.SetActive(false);
+
+        disableafterhouse.SetActive(false);
     }
 
     // Update is called once per frame
@@ -48,7 +51,7 @@ public class EndofDayController : MonoBehaviour
             family.text = "";
             daily.text = "";
             Crop.text = "";
-            Total.text = ""; 
+            Total.text = "";
             GameObject.FindObjectOfType<FirstPersonController>().enabled = true;
             endofdayenabler.SetActive(false);
         }
@@ -83,5 +86,35 @@ public class EndofDayController : MonoBehaviour
             GameObject.FindObjectOfType<FirstPersonController>().enabled = false;
         }
 
+
+        if (other.tag == "afterhouse")
+        {
+            Endofday.SetActive(true);
+            dailymoney = Random.Range(5, 10);
+            familymoney = Random.Range(5, 10);
+            CropWork = 0;
+
+            family.text = familymoney.ToString();
+            daily.text = dailymoney.ToString();
+            Crop.text = CropWork.ToString();
+
+            total = familymoney + dailymoney + CropWork;
+            Total.text = "" + total.ToString();
+
+
+            GameObject.FindObjectOfType<FirstPersonController>().enabled = false;
+
+            StartCoroutine("disablehouseend");
+
+         
+        }
+       
+    }
+
+
+    IEnumerator disablehouseend()
+    {
+        yield return new WaitForSeconds(10);
+        disableafterhouse.SetActive(false);
     }
 }

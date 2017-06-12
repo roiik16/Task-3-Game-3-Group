@@ -29,9 +29,16 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
 
         public GameObject croptele;
+
+        public GameObject endingenabler;
+
+
+        public GameObject presstogo;
+
+
         void Start()
         {
-
+            endingenabler.SetActive(false);
             bushes.SetActive(true);
             Time.SetActive(false);
             obj3.SetActive(false);
@@ -64,6 +71,8 @@ namespace UnityStandardAssets.Characters.FirstPerson
         {
             if (other.tag == "Level1")
             {
+                presstogo.SetActive(true);
+
                 //Level1.SetActive(true);
                 spacetext3 = false;
                 //transform.position = GetOnTruck.position;
@@ -74,10 +83,12 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
                 if (other.tag == "Level1" && timeLeft <= 0)
                 {
-                    transform.position = Finish1.position;
-                    obj3.SetActive(false);
-                    obj4.SetActive(true);
-                    HouseVan.SetActive(true);
+                        presstogo.SetActive(false);
+                        transform.position = Finish1.position;
+                        obj3.SetActive(false);
+                        obj4.SetActive(true);
+                        HouseVan.SetActive(true);
+                        croptele.SetActive(true);
                 }
             }
             if (other.tag == "GetInjured")
@@ -92,7 +103,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
         IEnumerator Injured() {
             yield return new WaitForSeconds(1);
             GetHelp.SetActive(true);
-            InjuryVan.SetActive(true);
+            endingenabler.SetActive(true);
         }
 
         IEnumerator LoseTime()
